@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import store from 'store'
 import { Route, Switch } from 'react-router-dom'
@@ -14,6 +13,11 @@ const MainPageComp = (props) => {
   const [subscriptionsButton, setSubscriptionsButton] = useState(null)
 
   useEffect(() => {
+
+    if(!store.get("properlogin")){
+      alert("Please Log In from Login Page!")
+      props.history.push("/");
+    }
 
     if (store.get('sysAdmin')) {
       setUsersManagementButton(<input type="button" className="top-button" value="Users Management" onClick={userManagement} />)
@@ -42,6 +46,7 @@ const userManagement = () => {
 }
 
 const logOut = () => {
+  store.set('properlogin', false);
   props.history.push("/");
 }
 

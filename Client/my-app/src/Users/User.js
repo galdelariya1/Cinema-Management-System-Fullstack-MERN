@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 
 const UserComp = (props) => {
 
-  // const [id, setId] = useState(props.id)
   const id = props.id
   const [user, setUser] = useState({})
   const [permissionsString, setPermissionsString] = useState("")
@@ -16,7 +15,7 @@ const UserComp = (props) => {
   let history = useHistory();
 
   useEffect(() => {
-    // setId(props.id)
+
     axios.get("http://localhost:8000/api/users/" + id)
     .then(user => {
       setUser(user.data)
@@ -35,7 +34,6 @@ const UserComp = (props) => {
       } 
     })
   },[])
-
 
   const editUser = () => {
     history.push("/MainPage/UsersManagement/EditUser/" + id);
@@ -65,7 +63,6 @@ const UserComp = (props) => {
 
         {editButton}
         {deleteButton}
-
 
     </div>
   );

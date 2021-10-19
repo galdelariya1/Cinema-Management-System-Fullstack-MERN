@@ -1,16 +1,18 @@
 import axios from 'axios';
 import {useState} from 'react';
 
+const falsePermissions = { View_Movies : false, Create_Movies : false,
+                                  Update_Movies : false, Delete_Movies : false,
+                                  View_Subscriptions : false, Create_Subscriptions : false,
+                                  Update_Subscriptions : false, Delete_Subscriptions : false }
+
 const AddUserComp = (props) => 
 {
 
   const [name, setName] = useState('')
   const [userName, setUserName] = useState('')
   const [sessionTimeOut, setSessionTimeOut] = useState('')
-  const [permissions, setPermissions] = useState({  View_Movies : false, Create_Movies : false,
-                                                    Update_Movies : false, Delete_Movies : false,
-                                                    View_Subscriptions : false, Create_Subscriptions : false,
-                                                    Update_Subscriptions : false, Delete_Subscriptions : false})
+  const [permissions, setPermissions] = useState(falsePermissions)
 
   const customSubmit = async (e) =>
   {

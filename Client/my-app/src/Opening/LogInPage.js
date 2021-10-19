@@ -31,8 +31,9 @@ const LogInPageComp = () =>
     axios.post("http://localhost:8000/api/users/login", {username , password})
     .then(response => {
       sessionStorage["name"] = response.data.name;
-      store.set('sysAdmin', response.data.sysAdmin)
-      store.set('permissions', response.data.permissions)
+      store.set('properlogin', true);
+      store.set('sysAdmin', response.data.sysAdmin);
+      store.set('permissions', response.data.permissions);
       history.push(`/MainPage`)
     }).catch(error => {
       alert(error.response.data.message)
