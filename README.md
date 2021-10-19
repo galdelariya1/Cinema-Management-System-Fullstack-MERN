@@ -20,5 +20,5 @@ Then, in order to activate the client side - cd Client, cd my-app, and then npm 
 
 Now when you first log into the system you can log in with the guest account:
 
-username - guest
+username - guest,
 password - checkingout
