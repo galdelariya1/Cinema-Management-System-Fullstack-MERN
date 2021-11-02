@@ -71,15 +71,15 @@ const MovieComp = (props) => {
 
       <ul className="MovieList">
         {
-          subscriptions.map((item, index) => {
+          subscriptions.map(item => {
 
             if (memberPermission) {
-              return <li key={index}>
-                <Link className="Link" to={`/MainPage/Subscriptions/SingleMember/${item.MembrId}`}>{item.MemberName}</Link>
+              return <li key={item._id}>
+                <Link className="Link" to={`/MainPage/Subscriptions/SingleMember/${item.MemberId}`}>{item.MemberName}</Link>
                 , {item.Date} </li>
             }
             else {
-              return <li key={index}> {item.MemberName + " "} , {" " + item.Date} </li>
+              return <li key={item._id}> {item.MemberName + " "} , {" " + item.Date} </li>
             }
 
           })

@@ -103,14 +103,14 @@ const MemberComp = (props) => {
 
       <ul>
         {
-          moviesSubscribed.map((item, index) => {
+          moviesSubscribed.map(item => {
             if (moviePermission) {
-              return <li key={index}>
+              return <li key={item._id}>
                 <Link to={`/MainPage/Movies/SingleMovie/${item.MovieId}`}>{item.MovieName}</Link>
                 , {item.Date} </li>
             }
             else {
-              return <li key={index}> {item.MovieName + " "},{" " + item.Date} </li>
+              return <li key={item._id}> {item.MovieName + " "},{" " + item.Date} </li>
             }
           })
         }

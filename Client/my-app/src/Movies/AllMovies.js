@@ -51,8 +51,8 @@ const AllMoviesComp = () => {
       </div>
 
       {
-        filteredMovies.map((item, index) => {
-          return <MovieComp key={index} id={item._id}
+        filteredMovies.map(item => {
+          return <MovieComp key={item._id} id={item._id}
             callback={data => deleteMovie(data)} />
         })
       }

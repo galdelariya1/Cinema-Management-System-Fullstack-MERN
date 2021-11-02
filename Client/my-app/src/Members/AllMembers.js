@@ -26,8 +26,8 @@ const AllMembersComp = () => {
     <div>
         
         {
-          members.map((item, index) => {
-            return <MemberComp key={index} id={item}
+          members.map(item => {
+            return <MemberComp key={item} id={item}
                     callback = {data => deleteMember(data)} />
           })
         }
